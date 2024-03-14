@@ -10,8 +10,10 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Data
 @Entity
+@Data
+@Getter
+@Setter
 public class User {
 	@Id // primary key
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,6 +1,5 @@
 package com.cos.security1.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -9,14 +8,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import com.cos.security1.config.oauth.PrincipalOauth2UserService;
-
 @Configuration
 @EnableWebSecurity 	
-@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
+@EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfig {
-	@Autowired
-	private PrincipalOauth2UserService principalOauth2UserService;
 	
 	@Bean
 	public BCryptPasswordEncoder encodePassword() {
@@ -35,12 +30,7 @@ public class SecurityConfig {
 			.formLogin()
 			.loginPage("/loginForm")
 			.loginProcessingUrl("/login")
-			.defaultSuccessUrl("/")
-			.and()
-			.oauth2Login()
-			.loginPage("/loginForm")
-			.userInfoEndpoint() // 구글 로그인 이후 loadUser 함수를 사용한 후처리 필요 
-			.userService(principalOauth2UserService);
+			.defaultSuccessUrl("/");
 		return http.build();
 	}
 }

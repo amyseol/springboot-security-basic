@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 import com.cos.security1.model.User;
 
 public class PrincipalDetails implements UserDetails {
