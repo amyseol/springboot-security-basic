@@ -11,4 +11,5 @@
 - JWT 서버 구축 <br/>
 - Spring Security 아키텍처에 대한 이해와 세션, TCP, CIA, RSA 와 같은 웹 보안 개념 학습
 
+  <img width="627" alt="스크린샷 2024-03-16 오전 3 15 53" src="https://github.com/amyseol/springboot-security-basic/assets/141234899/7ff31b5b-8258-480a-8f53-7ce5b1f5ba76">
 ##### 최주호님의 '스프링부트 시큐리티 & JWT' 강의를 수강하며 작성하였습니다.
