@@ -34,7 +34,7 @@ public class SecurityConfig {
 			.and()
 			.oauth2Login()
 			.loginPage("/loginForm")
-			.userInfoEndpoint() // 구글 로그인 이후 loadUser 함수를 사용한 후처리 필요 
+			.userInfoEndpoint() // 소셜 로그인 이후 loadUser 함수를 사용한 후처리 필요 
 			.userService(principalOauth2UserService);
 		return http.build();
 	}
